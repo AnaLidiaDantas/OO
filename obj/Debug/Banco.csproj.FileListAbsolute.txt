@@ -1,0 +1,7 @@
+C:\Users\ana.dantas\Documents\BancoVirtual\Banco\obj\Debug\Banco.csprojAssemblyReference.cache
+C:\Users\ana.dantas\Documents\BancoVirtual\Banco\obj\Debug\Banco.csproj.CoreCompileInputs.cache
+C:\Users\ana.dantas\Documents\BancoVirtual\Banco\bin\Debug\Banco.exe.config
+C:\Users\ana.dantas\Documents\BancoVirtual\Banco\bin\Debug\Banco.exe
+C:\Users\ana.dantas\Documents\BancoVirtual\Banco\bin\Debug\Banco.pdb
+C:\Users\ana.dantas\Documents\BancoVirtual\Banco\obj\Debug\Banco.exe
+C:\Users\ana.dantas\Documents\BancoVirtual\Banco\obj\Debug\Banco.pdb

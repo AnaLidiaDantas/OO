@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Banco
 {
@@ -6,21 +10,35 @@ namespace Banco
     {
         static void Main(string[] args)
         {
-            Banco banco = new Banco();
+            Banco contaCorrente = new Banco();
 
-            Pessoa a = new Pessoa("Paulo", new Conta(1, 1200.00));
-            banco.CriarConta(a);
+            //Criar Conta A
+            Movimentacao a= new Movimentacao("A", new ContaCorrente(1, 1200));
+            contaCorrente.criarConta(a);
+            Console.WriteLine("Conta: " + a.Descricao + " Saldo: R$ " + a.Valor.Saldo);
 
-            Console.WriteLine("Pessoa: " + a.Nome + " tem " + a.Money.Valor);
-            
-            banco.depositarValorNaConta(a, 369.56);
-            Console.WriteLine("Pessoa: " + a.Nome + " tem " + a.Money.Valor);
+            //Depositar na Conta A
+            contaCorrente.depositarValorNaConta(a, 500);
+            Console.WriteLine("Conta: " + a.Descricao + " Saldo: R$ " + a.Valor.Saldo);
 
-            banco.sacarValorDaConta(a, 1369.56);
-            Console.WriteLine("Pessoa: " + a.Nome + " tem " + a.Money.Valor);
-            
+            //Sacar da Conta A
+            contaCorrente.sacarValorDaConta(a, 1000);
+            Console.WriteLine("Conta: " + a.Descricao + " Saldo: R$ " + a.Valor.Saldo);
+
+            //Criar Conta B
+            Movimentacao b = new Movimentacao("B", new ContaCorrente(2, 2000));
+            contaCorrente.criarConta(b);
+            Console.WriteLine("Conta: " + b.Descricao + " Saldo: R$ " + b.Valor.Saldo);
+
+            //Depositar na Conta B
+            contaCorrente.depositarValorNaConta(b, 1000);
+            Console.WriteLine("Conta: " + b.Descricao + " Saldo: R$ " + b.Valor.Saldo);
+
+            //Sacar da Conta B
+            contaCorrente.sacarValorDaConta(b, 500);
+            Console.WriteLine("Conta: " + b.Descricao + " Saldo: R$ " + b.Valor.Saldo);
+
             Console.ReadKey();
         }
     }
 }
-  

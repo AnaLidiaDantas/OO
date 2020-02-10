@@ -1,30 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Banco
 {
-    class Conta
+    class ContaCorrente
     {
-        public int ID { get; set; }
-        public double Valor { get; set; }
-        public string numeroConta { get; set; }
-        public Conta Money { get; set; }
-
-        public Conta()
+        public int Numero { get; set; }
+        public decimal Saldo { get; set; }
+        public decimal Valor { get; set; }
+        public ContaCorrente()
         {
 
         }
-
-        public Conta (int id, double valor)
+        public ContaCorrente(int numero, decimal saldo)
         {
-            ID = id;
-            Valor = valor;
+            Numero = numero;
+            Saldo = saldo;
         }
 
-        public void depositarValorNaConta(double valor)
+        public void depositarValorNaConta(decimal valor)
         {
-            Valor += valor;
+            Saldo += valor;
         }
     }
 }

@@ -1,56 +1,44 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Banco
 {
-   class Banco
+    class Banco
     {
-        private List<Conta> contas;
+        private List<ContaCorrente> contasCorrente;
+        //public int numeroDeContas;
 
         public Banco()
         {
-            contas = new List<Conta>();
+            contasCorrente = new List<ContaCorrente>();
+        }
+        public void criarConta(Movimentacao novaConta) {
+            contasCorrente.Add(novaConta.Valor);
         }
 
-        public void CriarConta(Pessoa p)
+        public void depositarValorNaConta(Movimentacao movimentacao, decimal valor)
         {
-            contas.Add(p.Money);
-        }
-
-        public void depositarValorNaConta(Pessoa pessoa, double valor)
-        {
-            for(int i = 0; i < contas.Count; i++)
+            for (int i = 0; i< contasCorrente.Count; i++)
             {
-                if (contas[i].ID == pessoa.Money.ID)
+                if (contasCorrente[i].Numero == movimentacao.Valor.Numero)
                 {
-                    contas[i].Valor += valor;
+                    contasCorrente[i].Saldo += valor;
                 }
             }
         }
 
-        public void sacarValorDaConta(Pessoa pessoa, double valor)
+        public void sacarValorDaConta(Movimentacao movimentacao, decimal valor)
         {
-            for(int i = 0; i < contas.Count; i++)
+            for (int i = 0; i < contasCorrente.Count; i++)
             {
-                if (contas[i].ID == pessoa.Money.ID)
+                if (contasCorrente[i].Numero == movimentacao.Valor.Numero)
                 {
-                    contas[i].Valor -= valor;
+                    contasCorrente[i].Saldo -= valor;
                 }
             }
-        }
-
-        public double Saldo(Pessoa p)
-        {
-            double saldo=0.0;
-            for(int i=0;i<contas.Count; i++)
-            {
-                if (contas[i].ID == p.Money.ID)
-                {
-                    saldo = contas[i].Valor;
-                }
-            }
-            return saldo;
         }
     }
 }
